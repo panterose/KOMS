@@ -1,4 +1,4 @@
-package org.panterose.oms.oms
+package org.panterose.oms.web
 
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,6 +1,5 @@
-package org.panterose.oms.oms
+package org.panterose.oms.web
 
-import org.springframework.beans.factory.annotation.Configurable
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.thymeleaf.spring5.ISpringWebFluxTemplateEngine

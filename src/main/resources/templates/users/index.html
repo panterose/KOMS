@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en-US">
+<head th:replace="fragments/header:: headTag (title='Owners')"></head>
+<body>
+
+<div class="container">
+    <div class="ui grid">
+        <div class="seven wide column">
+            <h1 class="ui header">USers</h1>
+        </div>
+        <div class="nine wide column">
+            <a href="/users/add" class="ui button green" style="float: right; margin-left: 1em;">Add User</a>
+        </div>
+    </div>
+
+
+    <table class="ui table segment" th:if="${not users.isEmpty()}">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Passowrd</th>
+            <th>Company</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user: ${users}">
+            <td><a th:href="@{/users/view(id=${user.name})}"  th:text="${user.name}"></a></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.company}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

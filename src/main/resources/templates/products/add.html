@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en-US">
+<head th:replace="fragments/header :: headTag (title='Add Product')">
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".ui.form").form({
+            id : {
+                identifier : 'id',
+                rules : [
+                    {
+                        type : 'empty',
+                        prompt : 'Please an ID'
+                    }
+                ]
+            },
+            price : {
+                identifier : 'price',
+                rules : [
+                    {
+                        type : 'empty',
+                        prompt : 'Please enter a price'
+                    }
+                ]
+            },
+            description : {
+                identifier : 'description',
+                rules : [
+                    {
+                        type : 'empty',
+                        prompt : 'Please enter description'
+                    }
+                ]
+            }
+        })
+    })
+</script>
+
+<div class="container">
+    <h1 class="ui header">Add Product</h1>
+
+    <form method="post" action="add" role="form" class="ui form">
+        <div class="field">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id" placeholder="Id"/>
+        </div>
+        <div class="field">
+            <label for="description">Description</label>D
+            <input type="text" id="description" name="description" placeholder="description"/>
+        </div>
+        <div class="price">
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" placeholder="Price"/>
+        </div>
+        <button type="submit" class="ui green submit button">Add</button>
+    </form>
+</div>
+
+</body>
+</html>

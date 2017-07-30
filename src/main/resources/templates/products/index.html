@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en-US">
+<head th:replace="fragments/header:: headTag (title='Products')"></head>
+<body>
+
+<div class="container">
+    <div class="ui grid">
+        <div class="seven wide column">
+            <h1 class="ui header">Products</h1>
+        </div>
+        <div class="nine wide column">
+            <a href="/products/add" class="ui button green" style="float: right; margin-left: 1em;">Add Product</a>
+        </div>
+    </div>
+
+
+    <table class="ui table segment" th:if="${not products.isEmpty()}">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Passowrd</th>
+            <th>Company</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <td><a th:href="@{/products/view(id=${product.id})}"  th:text="${product.id}"></a></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

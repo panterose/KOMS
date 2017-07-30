@@ -27,9 +27,9 @@ class WebSecurityConfig {
 
                     .pathMatchers("/").permitAll()
                     .pathMatchers("/css/*").permitAll()
-                    .pathMatchers("/users", "/users/*").authenticated().Access().access(this::currentUserMatchesPath)
-                    .pathMatchers("/orders", "/orders/*").access(this::currentUserMatchesPath)
-                    .pathMatchers("/products", "/products/*").access(this::currentUserMatchesPath)
+                    //.pathMatchers("/users", "/users/*").authenticated().Access().access(this::currentUserMatchesPath)
+                    //.pathMatchers("/orders", "/orders/*").authenticated().Access().access(this::currentUserMatchesPath)
+                    //.pathMatchers("/products", "/products/*").authenticated().Access().access(this::currentUserMatchesPath)
                     .anyExchange().authenticated()
                 .and()
 

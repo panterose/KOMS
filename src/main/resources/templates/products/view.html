@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en-US">
+<head th:replace="fragments/header :: headTag (title='Product')"></head>
+<body>
+
+<div class="container">
+    <div class="ui grid">
+        <div class="twelve wide column">
+            <h1 class="ui header">User</h1>
+        </div>
+    </div>
+
+    <table class="ui table segment">
+        <tr>
+            <th>ID</th>
+            <td><i class="user icon"></i> <span th:text="${product.id}"></span></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><i class="map marker icon"></i> <span th:text="${product.description}"></span></td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td><i class="phone icon"></i> <span th:text="${product.price}"></span></td>
+        </tr>
+    </table>
+
+    
+</div>
+
+</body>
+</html>

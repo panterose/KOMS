@@ -32,5 +32,15 @@ class WebsiteRoutes {
                 GET("/", userHandler::view)
             }
         }
+        "/products".nest {
+            GET("/", productHandler::all)
+            "/add".nest {
+                GET("/", productHandler::addPage)
+                POST("/", productHandler::add)
+            }
+            "/view".nest {
+                GET("/", productHandler::view)
+            }
+        }
     }
 }
